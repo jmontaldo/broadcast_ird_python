@@ -7,9 +7,9 @@ def buscar(value) -> str:
     file_path = dir + r"\señales.json"
     with open(file_path, "r") as file:
         datos = json.load(file)
-    drm = value
+    id = value
     for data in datos:
-        if  drm == data["DRM"]:
+        if  id == data["ID"]:
             multicast = data["Multicast"]
             interface = data["Interface"]
             puerto = data["Puerto"]
