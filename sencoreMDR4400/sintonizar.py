@@ -10,8 +10,8 @@ def sintonizar(multicast, interface, puerto) -> dict:
     opener = urllib.request.build_opener(cookie_processor)
     urllib.request.install_opener(opener)
 
-    url = "http://10.177.18.228/webservice.fcgi"
-    data = urllib.parse.urlencode({"action": "csf.login", "user": "admin", "pass": ""}).encode("utf-8")
+    url = "http://IP-address-of-device/webservice.fcgi" #Replace with the IP address of your receiver
+    data = urllib.parse.urlencode({"action": "csf.login", "user": "your-user-credentials", "pass": "your-passwd-credentials"}).encode("utf-8") #Replace with your credentials
     request = urllib.request.Request(url, data = data)
     response = opener.open(request)
     for cookie in cookies:
@@ -41,7 +41,7 @@ def sintonizar(multicast, interface, puerto) -> dict:
     #print(f"Solicitud aceptada: {ans.status} - {ans.reason}")
     #data = ans.read()
     #print(json.loads(data))    Answer's breakpoint check
-    time.sleep(20)
+    time.sleep(20) #Wait a few seconds before retrieve the data
 
     conn = http.client.HTTPConnection(url)
     headers = {"Content-type": "text/html; charset=UTF-8", "cookie": ready_cookie}
