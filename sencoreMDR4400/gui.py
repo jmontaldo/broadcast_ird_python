@@ -8,9 +8,9 @@ def search():
     text_space.insert(tk.END, data)
 
 window = tk.Tk()
-window.title("DRMonitor")
+window.title("Monitor")
 
-input_label = tk.Label(window, text="Ingresa el numero de DRM: ")
+input_label = tk.Label(window, text="Ingresa el numero de ID: ")
 input_label.pack(pady=5)
 input_value = tk.Entry(window)
 input_value.pack(pady=5)
